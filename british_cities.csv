@@ -1,0 +1,15 @@
+city,country,mfg_1971,mfg_1981,mfg_1991,pct_change_70s,pct_change_80s,pct_change_total,black_pct_approx_1981,geography_type,sic_note
+Birmingham,England,344000,252000,174000,-26.7,-31.0,-49.4,2.5,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Manchester,England,300000,201000,133000,-33.0,-33.8,-55.7,1.8,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Sheffield,England,136000,91000,56000,-33.1,-38.5,-58.8,0.8,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Liverpool,England,179000,113000,64000,-36.9,-43.4,-64.2,1.2,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Leeds,England,113000,77000,61000,-31.9,-20.8,-46.0,1.0,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Bradford,England,103000,64000,57000,-37.9,-10.9,-44.7,3.5,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Coventry,England,154000,97000,67000,-37.0,-30.9,-56.5,1.2,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Sunderland,England,57000,41000,39000,-28.1,-4.9,-31.6,0.4,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Wolverhampton,England,74000,47000,36000,-36.5,-23.4,-51.4,4.2,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Glasgow,Scotland,235000,142000,93000,-39.6,-34.5,-60.4,0.6,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Stoke,England,102000,76000,66000,-25.5,-13.2,-35.3,0.3,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Middlesbrough,England,55000,35000,24000,-36.4,-31.4,-56.4,0.5,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Leicester,England,108000,92000,73000,-14.8,-20.7,-32.4,3.8,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991
+Nottingham,England,136000,102000,79000,-25.0,-22.5,-41.9,1.5,travel_to_work_area_1984,SIC68_for_1971-1981_SIC80_for_1981-1991

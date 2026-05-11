@@ -1,0 +1,33 @@
+country,population_group,mva_per_capita_usd,mva_pct_gdp,source_year,notes
+Switzerland,European,11200,17.2,2022,World Bank WDI
+Germany,European,8930,19.1,2022,World Bank WDI
+USA,European,8540,10.8,2022,World Bank WDI
+South Korea,East Asian,8420,25.4,2022,World Bank WDI
+Singapore,East Asian,8100,19.8,2022,World Bank WDI
+Japan,East Asian,7980,20.1,2022,World Bank WDI
+Taiwan,East Asian,7650,26.8,2022,World Bank WDI / UNIDO
+Sweden,European,7640,13.8,2022,World Bank WDI
+Czech Republic,European,5120,23.6,2022,World Bank WDI
+China,East Asian,3290,27.7,2022,World Bank WDI
+Poland,European,3180,19.2,2022,World Bank WDI
+Malaysia,SE Asian,2890,22.9,2022,World Bank WDI
+Turkey,MENA/Turkic,2140,19.3,2022,World Bank WDI
+Saudi Arabia,MENA/Arab,1890,9.8,2022,World Bank WDI; low % reflects oil GDP distortion
+Thailand,SE Asian,1640,25.4,2022,World Bank WDI
+Chile,Latin Am/Mixed,1560,10.3,2022,World Bank WDI
+Argentina,Latin Am/Mixed,1240,13.1,2022,World Bank WDI
+Mexico,Latin Am/Mixed,1180,16.8,2022,World Bank WDI
+Brazil,Latin Am/Mixed,890,10.9,2022,World Bank WDI
+Vietnam,SE Asian,840,24.8,2022,World Bank WDI
+South Africa,Sub-Saharan Africa,630,12.3,2022,World Bank WDI
+Indonesia,SE Asian,590,18.3,2022,World Bank WDI
+Colombia,Latin Am/Mixed,580,10.6,2022,World Bank WDI
+Morocco,MENA/Arab,510,14.8,2022,World Bank WDI
+India,S Asian,390,13.3,2022,World Bank WDI
+Egypt,MENA/Arab,310,16.4,2022,World Bank WDI
+Bangladesh,S Asian,210,20.4,2022,World Bank WDI
+Ghana,Sub-Saharan Africa,190,7.2,2022,World Bank WDI
+Kenya,Sub-Saharan Africa,170,7.9,2022,World Bank WDI
+Nigeria,Sub-Saharan Africa,80,8.8,2022,World Bank WDI
+Ethiopia,Sub-Saharan Africa,60,5.8,2022,World Bank WDI
+DR Congo,Sub-Saharan Africa,30,3.9,2022,World Bank WDI
