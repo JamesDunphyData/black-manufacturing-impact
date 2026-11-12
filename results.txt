@@ -1,0 +1,177 @@
+==============================================================================
+REPRODUCTION OF ALL REGRESSION RESULTS
+Paper: Black Population Share and Manufacturing Employment Decline
+       in American Cities, 1950-1990
+Author: James Dunphy
+==============================================================================
+
+Raw dataset: 1470 rows, 287 cities, 51 states, years [np.int64(1950), np.int64(1960), np.int64(1970), np.int64(1980), np.int64(1990)]
+Analysis sample: 1137 observations, 298 cities, 51 states
+
+==============================================================================
+TABLE 1: DESCRIPTIVE STATISTICS (Analysis Sample)
+==============================================================================
+Variable                                       Mean         SD        Min        Max      N
+------------------------------------------------------------------------------
+Mfg Employment Change (%)                    0.2395     0.7003    -0.5952     6.1188   1137
+Black Share (%)                              0.1426     0.1583     0.0001     0.8057   1137
+Prior Black Share (%)                        0.1239     0.1445     0.0001     0.7108   1137
+Change in Black Share (pp)                   0.0187     0.0383    -0.1890     0.4612   1137
+Hispanic Share (%)                           0.0644     0.1243     0.0000     0.9470   1137
+Mfg Employment / Population                  0.5963     1.4084     0.0073    12.1363   1137
+Population Change (%)                        0.2807     1.0459    -0.2718    21.3918   1137
+City Population                          224157.6500 543101.9037  2934.0000 7894862.0000   1137
+
+==============================================================================
+TABLE 2: OLS REGRESSION — DV: Mfg Employment Change (%)
+6-Column Specification Buildup (HC1 Robust SEs)
+==============================================================================
+                                        (1)          (2)          (3)          (4)          (5)          (6)
+------------------------------------------------------------------------------------------------------
+prev_pct_black                   -0.8130***   -0.6614***   -0.6847***   -0.6188***   -0.4337***   -0.6263***
+delta_pct_black                               -2.3561***   -2.3358***   -1.9701***   -2.2265***   -2.0356***
+prev_pct_hispanic                                                                     0.3218*     -0.2658   
+delta_pct_hispanic                                                                    0.1973       0.1192   
+prev_mfg_ratio                                             -0.0105      -0.0130      -0.0159*     -0.0120   
+log_pop                                                                 -0.0550*     -0.0517*     -0.0510*  
+d1970                                                                                -0.1328                
+d1980                                                                                -0.1644*               
+d1990                                                                                -0.4621***             
+const                             0.3402***    0.3655***    0.3756***    1.0037***    1.1280***    0.9648***
+N                                      1137         1137         1137         1137         1137         1137
+R-squared                            0.0281       0.0438       0.0448       0.0504       0.1025       0.0517
+
+Column (5) Standard Errors:
+  prev_pct_black                  SE = 0.0992
+  delta_pct_black                 SE = 0.4273
+  prev_pct_hispanic               SE = 0.1372
+  delta_pct_hispanic              SE = 0.1721
+
+F-test (Black vars jointly) in col (5): F=26.59, p=0.0000
+
+==============================================================================
+TABLE 3: WITHIN-STATE TEST (State Fixed Effects)
+==============================================================================
+
+                                    (1) No FE   (2) State FE  (3) Clustered
+--------------------------------------------------------------------------
+prev_pct_black                    -0.4337***    -0.6767***    -0.6767*  
+                               (    0.0992) (    0.1689) (    0.2910)
+delta_pct_black                   -2.2265***    -1.1394**     -1.1394***
+                               (    0.4273) (    0.3593) (    0.3269)
+prev_pct_hispanic                  0.3218*      -0.5553***    -0.5553***
+                               (    0.1372) (    0.1688) (    0.1545)
+delta_pct_hispanic                 0.1973       -1.0486***    -1.0486** 
+                               (    0.1721) (    0.2835) (    0.3619)
+
+N                                        1137           1137           1137
+R-squared                              0.1025         0.2942         0.2942
+State FE                                   No            Yes            Yes
+SE type                                   HC1            HC1  State cluster
+  F-test (Black vars) (1): F=26.59, p=0.0000
+  F-test (Black vars) (2): F=11.94, p=0.0000
+  F-test (Black vars) (3): F=6.83, p=0.0024
+
+==============================================================================
+TABLES 4-5: CITY-STATE TYPOLOGY
+==============================================================================
+
+Thresholds:
+  Median city Black share:       0.0789 (7.9%)
+  Median state avg Black share:  0.0928 (9.3%)
+  Hispanic 75th pctile (1970+):  0.0979 (9.8%)
+
+Category distribution:
+  Black_city_Black_state          N= 401  Mean Mfg Change=0.1323  Mean %Black=0.2927
+  Black_city_White_state          N=  63  Mean Mfg Change=0.1422  Mean %Black=0.1389
+  Hispanic_city                   N= 219  Mean Mfg Change=0.2127  Mean %Black=0.1171
+  White_city_Black_state          N= 118  Mean Mfg Change=0.1778  Mean %Black=0.0355
+  White_city_White_state          N= 336  Mean Mfg Change=0.4248  Mean %Black=0.0184
+
+TABLE 4: Typology Model (ref = White_city/White_state)
+N=1137, R-squared=0.0944
+
+Category                                 Coeff         SE    p-value
+--------------------------------------------------------------------
+Black_city_Black_state                 -0.2046 (0.0553)     0.0002 ***
+Black_city_White_state                 -0.2132 (0.0737)     0.0038 **
+Hispanic_city                          -0.0005 (0.0509)     0.9917 
+White_city_Black_state                 -0.2152 (0.0713)     0.0025 **
+
+TABLE 5: Pairwise Wald Tests
+Comparison                                        Diff     Wald    p-value   Supported?
+--------------------------------------------------------------------------------------
+Hispanic > White/White                         -0.0005     0.00     0.9917           No
+White/White > White/Black St                    0.2152     9.11     0.0025        Yes**
+White/Black St > Black/Black St                -0.0107     0.04     0.8470           No
+Black/Black St > Black/White St                 0.0086     0.02     0.8774           No
+Hispanic > Black/White St (extremes)            0.2126    12.76     0.0004       Yes***
+
+==============================================================================
+TABLE 6: DECADE-SPECIFIC OLS — DV: Mfg Employment Change (%)
+==============================================================================
+
+                             1950s-60s    1960s-70s    1970s-80s    1980s-90s
+---------------------------------------------------------------------------
+prev_pct_black              -1.1083**     0.0041      -0.9671***   -0.3859***
+                          (   0.4172) (   0.1837) (   0.1660) (   0.1005)
+delta_pct_black             -4.1254**    -1.8512***   -0.6351      -1.9383** 
+                          (   1.3807) (   0.4243) (   0.6373) (   0.6420)
+prev_mfg_ratio              -0.0138      -0.0099      -0.0398***   -0.0242** 
+                          (   0.0097) (   0.0119) (   0.0112) (   0.0075)
+log_pop                     -0.1263      -0.0205      -0.0048      -0.0026   
+                          (   0.0742) (   0.0243) (   0.0291) (   0.0221)
+const                        2.0827*      0.5848*      0.4793       0.1141   
+                          (   0.8803) (   0.2966) (   0.3378) (   0.2707)
+
+N                                  263          281          295          298
+R-squared                       0.0623       0.0483       0.1039       0.0712
+
+==============================================================================
+TABLE 8: OLS — DV: Population Change (%)
+==============================================================================
+
+                                     (1) Full (2) Interaction
+------------------------------------------------------------
+mfg_change_pct                     0.5731**      0.6714** 
+                               (    0.2070) (    0.2522)
+prev_pct_black                    -0.3113**     -0.1690   
+                               (    0.1178) (    0.1364)
+delta_pct_black                   -2.7192***    -3.3300***
+                               (    0.7896) (    0.7787)
+prev_pct_hispanic                  0.0400        0.0519   
+                               (    0.1212) (    0.1234)
+log_pop                            0.0017       -0.0013   
+                               (    0.0250) (    0.0249)
+d1970                             -0.2278*      -0.1963*  
+                               (    0.0998) (    0.0933)
+d1980                             -0.3413***    -0.3475***
+                               (    0.0803) (    0.0811)
+d1990                             -0.2424***    -0.2948***
+                               (    0.0734) (    0.0694)
+mfg_x_black                                      -2.2190   
+                                              (    1.1351)
+const                              0.4200        0.4607   
+                               (    0.3418) (    0.3380)
+
+N                                        1137           1137
+R-squared                              0.2065         0.2237
+  F-test (Black vars) col (1): F=14.2, p=0.0000
+
+==============================================================================
+ROBUSTNESS CHECK: Dropping Negative 'Other' Category Cities
+==============================================================================
+
+N=1108 (dropped 29 obs)
+prev_pct_black:  -0.4382 (p=0.0000)
+delta_pct_black: -2.2378 (p=0.0000)
+Results unchanged.
+
+==============================================================================
+SUMMARY OF KEY FINDINGS
+==============================================================================
+1. Baseline: prev_pct_black = -0.4337***, delta_pct_black = -2.2265***
+2. State FE: prev_pct_black = -0.6767***, delta_pct_black = -1.1394**
+3. Hispanic reversal: baseline = 0.3218* → state FE = -0.5553***
+4. Typology two-tier: Hispanic/White-White cluster vs ~20pp penalty for Black-associated categories
+5. Effect survives state-clustered SEs: F=6.83, p=0.0024
